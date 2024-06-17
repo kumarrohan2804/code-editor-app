@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn-primary {
+  @apply bg-blue-500 text-white py-2 px-4 rounded;
+}
+
+.btn-secondary {
+  @apply bg-green-500 text-white py-2 px-4 rounded;
+}
+
+.output, .message {
+  @apply bg-gray-800 text-white p-4 rounded mt-4;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+.error{
+  border: 1px solid red;
+  color: red;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(14px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.editor-shadow{
+  border: 1px solid lightgray;
+  padding-top: 8px;
+}
+
+@media (max-width: 1024px) {
+  .lg\\:flex-row {
+    @apply flex-col;
+  }
+
+  .lg\\:w-1\\2 {
+    @apply w-full;
+  }
+
+  .lg\\:border-r {
+    @apply border-b;
+  }
+}
+
+@media (max-width: 640px) {
+  .btn-primary, .btn-secondary {
+    @apply w-full;
+  }
+
+  .output, .message {
+    @apply text-sm;
+  }
+}
